@@ -1,1 +1,1 @@
-ejercicio: crear nuevo proyecto, crear la clase Principal, agregar el metodo main, solicitar 2 numero y aplicar suma y resta, mostrar resultados
+ejercicio 3: crear nuevo proyecto, crear la clase Principal y agregar el método main, crear 2 variables numéricas y aplicar suma y resta, mostrar resultados en la consola.
