@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Principal {
 
@@ -6,9 +7,18 @@ public class Principal {
 		
 		// muestra mensajes al usuario
 		System.out.println("****** Calculadora ******");
+		/*
+			int numero1 = 2;
+			int numero2 = 3;
+		*/
 		
-		int numero1 = 2;
-		int numero2 = 3;
+		Scanner leerTeclado = new Scanner(System.in);
+		
+		System.out.print("Ingrese el primer número: ");
+		int numero1 = leerTeclado.nextInt();
+		System.out.print("Ingrese el segundo número: ");
+		int numero2 = leerTeclado.nextInt();
+		
 		
 		// muestra el resultado de la suma
 		System.out.println("Suma: " + (numero1 + numero2));
