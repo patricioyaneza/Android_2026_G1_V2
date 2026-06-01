@@ -14,6 +14,8 @@ public class Principal {
 		
 		Scanner leerTeclado = new Scanner(System.in);
 		
+
+		
 		System.out.print("Ingrese el primer número: ");
 		int numero1 = leerTeclado.nextInt();
 		System.out.print("Ingrese el segundo número: ");
