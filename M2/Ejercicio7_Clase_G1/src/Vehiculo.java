@@ -79,5 +79,6 @@ public class Vehiculo {
 		System.out.println("Cantidad de puertas: " + this.cantidadPuertas);
 		System.out.println("Tiene aire acondicionado: " + this.tieneAireAcondicionado);
 	}
+		
 
 } // cierra clase Vehiculo
