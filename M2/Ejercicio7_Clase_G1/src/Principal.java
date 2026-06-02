@@ -1,9 +1,13 @@
+import java.util.Scanner;
 
 public class Principal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		
+		Vehiculo vehiculo = new Vehiculo();		
+		vehiculo.mostrarInformacion();
+		
 	}
 
 }
