@@ -35,6 +35,6 @@ public class Principal {
 		v4.setCantidadPuertas(5);
 		v4.setTieneAireAcondicionado(true);
 		v4.mostrarInformacion();
-		
+
 	}
 }

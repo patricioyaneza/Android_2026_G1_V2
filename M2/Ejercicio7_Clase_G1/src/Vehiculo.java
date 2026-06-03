@@ -9,7 +9,7 @@ public class Vehiculo {
     private int cantidadPuertas;
     private boolean tieneAireAcondicionado;
     
-  
+ 
     //2.- Constructores
     // new Vehiculo();
     public Vehiculo() {
@@ -33,7 +33,7 @@ public class Vehiculo {
     }
     
     //3.- Getters y Setters (get y set)  v1.setPatente("ABC123");
-    public void setPatente(String patente) {
+    public void setPatente(String patente) {    	
     	this.patente = patente;
 	}
 	public String getPatente() {
