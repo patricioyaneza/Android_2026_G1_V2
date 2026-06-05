@@ -46,5 +46,11 @@ public class Cuenta {
 		System.out.println("Saldo			: " + this.saldo);
 	}
 	
+	//  girar 
+	
+	// depositar
+	
+	// movimientos
+	
 	
 }
