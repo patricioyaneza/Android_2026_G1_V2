@@ -47,5 +47,9 @@ public class Animal {
 		System.out.println("Peso	: " + this.peso);
 	}
 	
+	public void emitirSonido()
+	{
+		System.out.println("El animal hace ruido");
+	}
 	
 }

@@ -9,5 +9,17 @@ public class Principal {
 		perro1.setRaza("Salchicha");
 		
 		perro1.imprimir();
+		
+		String numero = "";
+		
+		//  super clase = sub clase
+		Animal animal1 = new Perro();
+		Animal animal2 = perro1;
+		// Perro perroX = new Animal(); Error
+		Animal animal3 = new Animal("benji", 20.5);
+		animal3.imprimir();
+		
+		System.out.println("\n\n");
+		perro1.emitirSonido();
 	}
 }

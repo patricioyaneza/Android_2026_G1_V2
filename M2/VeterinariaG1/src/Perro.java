@@ -28,7 +28,10 @@ public class Perro extends Animal {
 		System.out.println("Raza	: " + this.raza);
 	}
 	
-	
-	
+	@Override
+	public void emitirSonido()
+	{
+		System.out.println("guau");
+	}
 	
 }
