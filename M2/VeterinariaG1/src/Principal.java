@@ -21,5 +21,19 @@ public class Principal {
 		
 		System.out.println("\n\n");
 		perro1.emitirSonido();
+		// crear un gato, agregar los datos solicitados y mostrar en consola.
+		
+		Gato gato1 = new Gato();
+		gato1.setNombre("hija");
+		gato1.setPeso(4.5);
+		gato1.setTieneVisionNocturna(true);
+		System.out.println("Datos del gato 1:");
+		gato1.imprimir();
+
+
+		System.out.println("\n");
+		gato1.emitirSonido();
+		
+		
 	}
 }

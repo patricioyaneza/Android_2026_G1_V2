@@ -22,7 +22,7 @@ public class Perro extends Animal {
 
 	@Override
 	public void imprimir() {
-		super.imprimir();
+		super.imprimir();		
 		//System.out.println("Nombre	: " + this.nombre);		
 		//System.out.println("Peso	: " + this.peso);
 		System.out.println("Raza	: " + this.raza);
