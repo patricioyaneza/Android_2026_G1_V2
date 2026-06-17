@@ -53,10 +53,10 @@ public class Principal {
 		veterinaria.add(p3);
 
 		// recorrer
-		
+		// for each
 		for(Animal a: veterinaria)
 		{
-			//a.imprimir();
+			a.imprimir();
 			a.emitirSonido();
 			System.out.println("\n");			
 		}

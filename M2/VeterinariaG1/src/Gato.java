@@ -1,4 +1,4 @@
-public class Gato extends Animal {
+public class Gato extends Animal implements Operaciones{
 
 	private boolean tieneVisionNocturna;
 
@@ -29,6 +29,21 @@ public class Gato extends Animal {
 	public void emitirSonido()
 	{
 		System.out.println("miau");
+	}
 
+	@Override
+	public boolean grabar() {
+		// TODO Auto-generated method stub
+		int total = 5000 * IVA;
+		System.out.println("Cobro total : " + total);
+		System.out.println("Datos guardados");
+		return true;
+	}
+
+	@Override
+	public boolean modificar() {
+		// TODO Auto-generated method stub
+		System.out.println("Datos modificados");
+		return true;
 	}
 }
