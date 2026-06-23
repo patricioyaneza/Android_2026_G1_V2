@@ -8,7 +8,7 @@ public class Principal {
 		perro1.setNombre("firulais");
 		perro1.setPeso(10.0);
 		perro1.setRaza("Salchicha");
-		
+
 		perro1.imprimir();
 		
 		String numero = "";
@@ -60,6 +60,9 @@ public class Principal {
 			a.emitirSonido();
 			System.out.println("\n");			
 		}
+		
+		
+		
 		
 		
 		

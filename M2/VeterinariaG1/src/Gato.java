@@ -42,7 +42,7 @@ public class Gato extends Animal implements Operaciones{
 
 	@Override
 	public boolean modificar() {
-		// TODO Auto-generated method stub
+
 		System.out.println("Datos modificados");
 		return true;
 	}

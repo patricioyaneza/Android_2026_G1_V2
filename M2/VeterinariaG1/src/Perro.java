@@ -2,6 +2,7 @@
 public class Perro extends Animal {
 	private String raza;
 
+	
 	public Perro() {
 		super();
 		this.raza = "";
@@ -22,9 +23,9 @@ public class Perro extends Animal {
 
 	@Override
 	public void imprimir() {
-		super.imprimir();		
-		//System.out.println("Nombre	: " + this.nombre);		
-		//System.out.println("Peso	: " + this.peso);
+		//super.imprimir();		
+		System.out.println("Nombre	: " + this.nombre);		
+		System.out.println("Peso	: " + this.peso);
 		System.out.println("Raza	: " + this.raza);
 	}
 	
@@ -33,5 +34,5 @@ public class Perro extends Animal {
 	{
 		System.out.println("guau");
 	}
-	
+
 }
