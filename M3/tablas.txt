@@ -1,0 +1,83 @@
+-- ============================================
+-- CREACIÓN DE BASE DE DATOS
+-- ============================================
+
+CREATE DATABASE PuntoVenta;
+USE PuntoVenta;
+
+-- ============================================
+-- TABLA CLIENTE
+-- ============================================
+
+CREATE TABLE Cliente (
+    id_cliente 		INT 		AUTO_INCREMENT PRIMARY KEY,
+    nombre 		VARCHAR(100) 	NOT NULL, -- VARCHAR = STRING
+    apellido 		VARCHAR(100) 	NOT NULL,
+    telefono 		VARCHAR(15)	NULL,
+    correo 		VARCHAR(150) 	UNIQUE, -- EVITA QUE SE REPITAN CORREO
+    direccion 		VARCHAR(200)	NULL,
+    fecha_registro 	DATETIME 	DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ============================================
+-- TABLA CATEGORIA
+-- ============================================
+
+CREATE TABLE Categoria (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- ============================================
+-- TABLA MARCA
+-- ============================================
+
+CREATE TABLE Marca (
+    id_marca INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- ============================================
+-- TABLA PRODUCTO
+-- ============================================
+
+CREATE TABLE Producto (
+    id_producto 	INT 		AUTO_INCREMENT PRIMARY KEY,
+    nombre 		VARCHAR(150) 	NOT NULL,
+    descripcion 	VARCHAR(200)	NOT NULL,
+    precio 		INT 		NOT NULL CHECK (precio > 0),
+    stock 		INT 		NOT NULL CHECK (stock >= 0),
+    id_categoria 	INT 		NOT NULL,
+    id_marca 		INT 		NOT NULL,
+    FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria),
+    FOREIGN KEY (id_marca) REFERENCES Marca(id_marca)
+);
+
+-- ============================================
+-- TABLA FACTURA
+-- ============================================
+
+CREATE TABLE Factura (
+    id_factura 		INT 		AUTO_INCREMENT PRIMARY KEY,
+    id_cliente 		INT		NOT NULL,
+    fecha 		DATETIME	DEFAULT CURRENT_TIMESTAMP,
+    total 		INT 		NOT NULL CHECK (total >= 0),
+    metodo_pago 	VARCHAR(50) 	NOT NULL,
+    FOREIGN KEY (id_cliente) 
+	REFERENCES Cliente(id_cliente)
+);
+
+-- ============================================
+-- TABLA DETALLE_FACTURA (VENTAS)
+-- ============================================
+
+CREATE TABLE Detalle_Factura (
+    id_detalle 				INT AUTO_INCREMENT PRIMARY KEY,
+    id_factura 				INT NOT NULL,
+    id_producto 			INT NOT NULL,
+    cantidad 				INT NOT NULL CHECK (cantidad > 0),
+    precio_unitario 			INT NOT NULL CHECK (precio_unitario > 0),
+    subtotal 				INT NOT NULL CHECK (subtotal >= 0),
+    FOREIGN KEY (id_factura) REFERENCES Factura(id_factura) ON DELETE CASCADE,
+    FOREIGN KEY (id_producto) REFERENCES Producto(id_producto)
+);
