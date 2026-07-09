@@ -60,6 +60,7 @@ from producto;
 -- where permite filtrar información
 select * from producto where id_producto < 5;
 
--- Ejercicio 1: mostrar los 5 producto 
+-- Ejercicio 1: mostrar los 5 productos 
 -- que tienen el mayor precio
-
+select nombre, precio from producto order by precio DESC limit 3;
+select * from producto where precio >= 42;
