@@ -16,7 +16,7 @@ from producto;
 select upper(nombre) as Nombre, 
 		lower(descripcion)  Descripción,
 		length(nombre) as "Otro Nombre",
-        precio, precio + 100
+        precio, precio * 1.19 as "Precio con IVA"
 from producto;
 
 select count(id_producto) from producto; -- contar filas
