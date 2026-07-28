@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Proyecto01G1" parent="Theme.AppCompat.DayNight" />
+    <style name="Theme.Proyecto01G1" parent="Theme.AppCompat.DayNight.NoActionBar" />
+    <style name="Theme.Barra" parent="Theme.AppCompat.Light.DarkActionBar" />
 </resources>

@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -74,6 +75,17 @@ public class MainActivity2 extends AppCompatActivity {
             // Tarea: Agregar al IDE, una IA (gemini u otra que se pueda agregar)
             int resultado = numero1 / numero2;
             txtResultado.setText("Resultado: " + resultado);
+
+            new AlertDialog.Builder(this)
+                    .setTitle("Resultado de la división")
+                    .setMessage("El resultado de la división es: " + resultado)
+                    .setPositiveButton("Ok", null)
+                    //.setIcon(android.R.drawable.ic_dialog_info)
+                    //.setIcon(android.R.drawable.ic_menu_edit)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+
+
         });
         btnLimpiar.setOnClickListener(view -> {
             txtNumero1.setText(""); // limpia los text

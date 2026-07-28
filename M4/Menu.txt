@@ -1,0 +1,37 @@
+1.- Crear Recurso (carpeta) menú y archivo main_menu.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_next_activity"
+        android:title="2da Activity"
+        app:showAsAction="never" />
+</menu>
+
+2.-  agregar al código ACtivity:
+
+
+    // 1. Infla el recurso XML para mostrar las opciones en la Toolbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+//
+//    // 2. Controla la acción al presionar la opción del menú
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_next_activity) {
+            // Creamos el Intent para cambiar a SegundaActivity
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+3.- cambiar el estilo en themes por uno que no diga "No Action Bar"
