@@ -7,9 +7,6 @@ import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -31,11 +28,16 @@ public class MenuActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.action_calculadora){
-            Intent intent = new Intent(this, MainActivity2.class);
+            Intent intent = new Intent(this, CalculadoraActivity.class);
             startActivity(intent);
+            return true;
+        }
+        if(id == R.id.action_logout){
+            finishAffinity();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }

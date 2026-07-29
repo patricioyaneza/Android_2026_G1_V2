@@ -1,0 +1,97 @@
+1.- crear una activity
+
+2.- agregar en layout: CoordinatorLayout y FloatingActionButton
+NOTA: CoordinatorLayout no aparece en el menu
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="400dp"
+        android:layout_height="641dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabPrincipal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/baseline_360_24"
+            app:backgroundTint="@color/cardview_light_background" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCalculadora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="90dp"
+            android:src="@drawable/baseline_360_24"
+            android:visibility="gone" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabConfiguracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="160dp"
+            android:src="@drawable/baseline_360_24"
+            android:visibility="gone" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdicional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="230dp"
+            app:srcCompat="@android:drawable/alert_light_frame"
+            android:visibility="gone" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+3.- en Activity java:
+	(fab solo, es como un botón)
+
+    private FloatingActionButton fabPrincipal;
+    private FloatingActionButton fabCalculadora;
+    private FloatingActionButton fabConfiguracion;
+    private FloatingActionButton fabAdicional;
+
+// permite almacenar el estado de apertura visibilidad de los botones
+private boolean abierto = false;
+
+// dentro de onCreate 
+
+        // Referencias a los botones
+        fabPrincipal = findViewById(R.id.fabPrincipal);
+        fabCalculadora = findViewById(R.id.fabCalculadora);
+        fabConfiguracion = findViewById(R.id.fabConfiguracion);
+        fabAdicional = findViewById(R.id.fabAdicional);
+
+        // Mostrar u ocultar las opciones
+        fabPrincipal.setOnClickListener(v -> {
+
+            if (abierto) {
+                fabCalculadora.setVisibility(View.GONE);
+                fabConfiguracion.setVisibility(View.GONE);
+                fabAdicional.setVisibility(View.GONE);
+            } else {
+                fabCalculadora.setVisibility(View.VISIBLE);
+                fabConfiguracion.setVisibility(View.VISIBLE);
+                fabAdicional.setVisibility(View.VISIBLE);
+            }
+
+            abierto = !abierto;
+        });
+
+        // Acción del botón Calculadora
+        fabCalculadora.setOnClickListener(v -> {
+
+            Toast.makeText(this, "Calculadora", Toast.LENGTH_SHORT).show();
+        });
+
+        // Acción del botón Configuración
+        fabConfiguracion.setOnClickListener(v -> {
+            Toast.makeText(this, "Configuración", Toast.LENGTH_SHORT).show();
+        });
+

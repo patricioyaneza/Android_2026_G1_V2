@@ -1,0 +1,18 @@
+import android.widget.Toast;            
+
+Toast.makeText(this, "Presionó el botón sumar", Toast.LENGTH_LONG).show();
+
+
+
+
+
+
+import androidx.appcompat.app.AlertDialog;
+            new AlertDialog.Builder(this)
+                    .setTitle("Resultado de la división")
+                    .setMessage("El resultado de la división es: " + resultado)
+                    .setPositiveButton("Ok", null)
+                    //.setIcon(android.R.drawable.ic_dialog_info)
+                    //.setIcon(android.R.drawable.ic_menu_edit)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();

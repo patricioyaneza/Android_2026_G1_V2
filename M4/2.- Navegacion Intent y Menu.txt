@@ -9,7 +9,18 @@
         app:showAsAction="never" />
 </menu>
 
-2.-  agregar al código ACtivity:
+
+2.- SubMenu
+	Es posible agregar un submenú agregando un "menú" dentro de un item
+
+    <item android:title="SubMenu">
+        <menu>
+            <item android:title="Item" />
+        </menu>
+    </item>
+
+
+3.-  agregar al código ACtivity:
 
 
     // 1. Infla el recurso XML para mostrar las opciones en la Toolbar
@@ -34,4 +45,6 @@
         return super.onOptionsItemSelected(item);
     }
 
-3.- cambiar el estilo en themes por uno que no diga "No Action Bar"
+4.- cambiar el estilo en themes por uno que no diga "No Action Bar"
+
+
