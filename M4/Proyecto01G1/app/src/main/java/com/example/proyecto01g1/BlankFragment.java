@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class BlankFragment extends Fragment {
@@ -17,4 +19,14 @@ public class BlankFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_blank, container, false);
     }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button btnFragmentoSaludar = view.findViewById(R.id.btnFragmentoSaludar);
+        btnFragmentoSaludar.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Hola, soy un fragmento", Toast.LENGTH_SHORT).show();
+        });
+    }
+
 }
