@@ -15,6 +15,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.proyectokotlin.ui.theme.ProyectoKotlinTheme
 
 class MainActivity : ComponentActivity() {
+
+    var contador = 0
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -48,8 +52,36 @@ class MainActivity : ComponentActivity() {
     override fun onStart() {
         super.onStart()
         Log.d("Ciclo de Vida", "Llamada al metodo onStart")
+        contador++ // contador = contador + 1
+
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.d("Ciclo de Vida", "Llamada al metodo onResume")
+        contador++
+        Log.d("Ciclo de Vida", "Contador: " + contador)
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.d("Ciclo de Vida", "Llamada al metodo onPause")
+        contador++
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.d("Ciclo de Vida", "Llamada al metodo onStop")
+        contador++
+    }
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("Ciclo de Vida", "Llamada al metodo onRestart")
+        contador++
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Ciclo de Vida", "Llamada al metodo onDestroy")
+        Log.d("Ciclo de Vida", "Contador: " + contador)
+    }
 }
 
 @Composable
