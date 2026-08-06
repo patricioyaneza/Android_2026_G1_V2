@@ -1,6 +1,7 @@
 package com.example.proyectokotlin
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -28,6 +29,7 @@ class MainActivity : ComponentActivity() {
             }
         }
         println("Hola mundo")
+        System.out.println("Hola mundo")
         val persona = Persona(12345678, "Juan", "Pérez", 30)
 
         println(persona)
@@ -40,7 +42,14 @@ class MainActivity : ComponentActivity() {
         println("MARCA: " + vehiculo.marca)
         vehiculo.marca = "Ford"
         println("MARCA: " + vehiculo.marca)
+        Log.d("Ciclo de Vida", "Llamada al metodo onCreate")
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Ciclo de Vida", "Llamada al metodo onStart")
+    }
+
 }
 
 @Composable
@@ -57,4 +66,5 @@ fun GreetingPreview() {
     ProyectoKotlinTheme {
         Greeting("Android")
     }
+
 }
