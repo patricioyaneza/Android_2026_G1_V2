@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
         println("Hola mundo")
         System.out.println("Hola mundo")
         val persona = Persona(12345678, "Juan", "Pérez", 30)

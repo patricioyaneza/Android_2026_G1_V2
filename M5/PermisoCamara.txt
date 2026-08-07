@@ -1,0 +1,31 @@
+1.- archivo Manifest, antes del tag <aplication>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+2.- código en la activity
+
+	    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.CAMERA
+                )
+                == PackageManager.PERMISSION_GRANTED
+            ) {
+                Toast.makeText(
+                    this,
+                    "Permiso ya concedido",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf<String?>(Manifest.permission.CAMERA),
+                    1
+                )
+            }
+        }
