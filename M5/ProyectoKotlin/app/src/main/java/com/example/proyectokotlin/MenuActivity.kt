@@ -1,6 +1,7 @@
 package com.example.proyectokotlin
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +17,12 @@ class MenuActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val sp = getSharedPreferences("misDatos", MODE_PRIVATE)
+
+        val txtEmailUsuario = findViewById<TextView>(R.id.txtEmailUsuario)
+        txtEmailUsuario.text = sp.getString("email", "")
+
+
     }
 }
