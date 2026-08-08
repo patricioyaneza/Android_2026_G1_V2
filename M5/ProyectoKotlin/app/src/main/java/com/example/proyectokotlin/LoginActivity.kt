@@ -29,11 +29,16 @@ class LoginActivity : AppCompatActivity() {
 //            Toast.makeText(this, "Boton Aceptar", Toast.LENGTH_SHORT).show()
             var sp = getSharedPreferences("misDatos", MODE_PRIVATE)
             sp.edit().putString("email", txtEmail.text.toString()).apply()
+            sp.edit().putBoolean("login", true).apply()
+            sp.edit().putInt("contador", 1).apply()
 
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
 
         }
+
+
+
 
     }
 }

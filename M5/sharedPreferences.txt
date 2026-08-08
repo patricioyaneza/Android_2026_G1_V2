@@ -1,6 +1,6 @@
 sharedPreferences
 
-Guardar
+1.- Guardar
         btnAceptar.setOnClickListener {
 //            Toast.makeText(this, "Boton Aceptar", Toast.LENGTH_SHORT).show()
             var sp = getSharedPreferences("misDatos", MODE_PRIVATE)
@@ -12,9 +12,18 @@ Guardar
         }
 
 
-leer
+2.- leer
 
         val sp = getSharedPreferences("misDatos", MODE_PRIVATE)
 
         val txtEmailUsuario = findViewById<TextView>(R.id.txtEmailUsuario)
         txtEmailUsuario.text = sp.getString("email", "")
+
+
+Ubicación del documento:
+
+1.- Device Manager -> 3 puntos -> open in device explorer
+2.- Ruta:  data -> data -> com.paquete.nombreproyecto -> shared_prefs -> nombrearchivo.xml  (misDatos.xml)
+
+
+
