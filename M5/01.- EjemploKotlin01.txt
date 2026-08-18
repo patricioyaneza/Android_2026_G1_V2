@@ -42,5 +42,37 @@ fun main() {
     
     
     
+// ciclos
+
+            for(i in 1..5)
+            {
+                println("valor: " +i)
+            }
+
+            val nombres = arrayOf("Juan", "Pedro", "Maria")
+            for(nombre in nombres)
+            {
+                println("Nombre: $nombre")
+            }
+            val nombre2 = "María Ignacia"
+            for(letra in nombre2)
+            {
+                println("Letra: $letra")
+            }
+
+            // while
+            var contador = 1
+            while (contador <= 5) {
+                println("Contador $contador")
+                contador++
+            }
+
+            val nombres2 = arrayOf("Juan", "Pedro", "Maria")
+            var indice = 0
+            while (indice < nombres2.size) {
+                println("Nombre: ${nombres2[indice]}")
+                indice++
+            }
+
     
 }
