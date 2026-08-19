@@ -32,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
             sp.edit().putBoolean("login", true).apply()
             sp.edit().putInt("contador", 1).apply()
 
+
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
 

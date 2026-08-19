@@ -29,6 +29,8 @@ class MenuActivity : AppCompatActivity() {
         txtEmailUsuario.text = sp.getString("email", "")
 
         val otrosDatos = sp.getInt("contador", 0)
+
+
         Toast.makeText(this, otrosDatos.toString(), Toast.LENGTH_SHORT).show()
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
