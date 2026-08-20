@@ -1,0 +1,32 @@
+1.- Cargar Fragment:
+        val btnA = findViewById<Button>(R.id.btnFragmentA)
+
+        btnA.setOnClickListener {
+            cambiarFragment(BlankFragment())
+        }
+
+
+    private fun cambiarFragment(fragment: Fragment) {
+        supportFragmentManager.commit {
+            replace(R.layout.activity_main2.run { R.id.fragmentContainerView2 }, fragment)
+        }
+    }
+
+
+
+2.- Cerrar fragment
+
+dentro del fragment:
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) { // 5to // only fragment
+        super.onViewCreated(view, savedInstanceState)
+        Log.d("Fragment", "onViewCreated")
+
+        val btnCerrarFrament = view.findViewById<Button>(R.id.btnCerrarFrament)
+        btnCerrarFrament.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .remove(this)   // elimina el fragmento actual
+                .commit()
+        }
+    }
