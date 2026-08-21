@@ -73,4 +73,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
         app:srcCompat="@android:drawable/ic_notification_clear_all" />
 
+    <Button
+        android:id="@+id/button"
+        style="@style/PrimaryButton"
+        android:text="Button"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="595dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
