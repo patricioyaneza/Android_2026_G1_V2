@@ -10,5 +10,18 @@ class UsuarioController {
         usuarioModel = UsuarioModel()
     }
 
+    fun guardar(rut: String, nombre: String, correo: String, edad: Int): Boolean {
+        return usuarioModel.guardar(rut, nombre, correo, edad)
+    }
+
+    fun mostrarCorreo(): String{
+        return usuarioModel.correo
+    }
+
+    fun imprimir(): String {
+        return usuarioModel.imprimir()
+    }
+
+    // TAREA: crear metodo para validar rut
 
 }

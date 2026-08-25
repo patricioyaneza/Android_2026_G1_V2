@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Projet M.V.C.</string>
+    <string name="login">Se Connecter</string>
+    <string name="email">E-mail</string>
+    <string name="password">Mot de passe</string>
+</resources>
