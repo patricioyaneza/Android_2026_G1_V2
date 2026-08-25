@@ -78,5 +78,11 @@ class RegistroUsuarioActivity : AppCompatActivity() {
             Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show()
         }
     }
+/*
 
+Ejercicio 2: Definir los mensajes de texto en el string para los distintos idiomas.
+
+PPT M5 AE3: donaciones.
+
+ */
 }
