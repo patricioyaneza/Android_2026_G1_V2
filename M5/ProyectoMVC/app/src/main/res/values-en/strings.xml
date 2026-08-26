@@ -4,6 +4,8 @@
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="save">Saved Data</string>
+    <string name="error">Error Saving</string>
 </resources>
 
 <!--

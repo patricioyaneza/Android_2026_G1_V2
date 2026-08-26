@@ -70,12 +70,12 @@ class RegistroUsuarioActivity : AppCompatActivity() {
             txtCorreo.setText("")
             txtEdad.setText("")
 
-            Toast.makeText(this, "Usuario guardado", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.save, Toast.LENGTH_SHORT).show()
             println(usuarioController.imprimir())
         }
         else
         {
-            Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show()
         }
     }
 /*

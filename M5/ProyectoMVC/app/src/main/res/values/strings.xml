@@ -3,4 +3,6 @@
     <string name="login">Autenticación</string>
     <string name="email">Correo</string>
     <string name="password">Clave</string>
+    <string name="save">Datos Guardados</string>
+    <string name="error">Error al Guardar</string>
 </resources>

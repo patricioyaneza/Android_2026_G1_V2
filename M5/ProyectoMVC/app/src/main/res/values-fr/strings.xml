@@ -4,4 +4,6 @@
     <string name="login">Se Connecter</string>
     <string name="email">E-mail</string>
     <string name="password">Mot de passe</string>
+    <string name="save">Données enregistrées</string>
+    <string name="error">Sauvegarde des erreurs</string>
 </resources>

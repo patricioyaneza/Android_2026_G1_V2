@@ -1,0 +1,62 @@
+🔑 Cómo usar View Binding paso a paso
+1. Activar View Binding en tu proyecto
+En tu archivo build.gradle (nivel de módulo app), dentro de android { ... } agrega:
+
+gradle
+buildFeatures {
+    viewBinding true
+}
+Esto habilita la generación automática de clases de binding para cada layout.
+
+2. Layout XML
+Supongamos que tienes un layout activity_main.xml:
+
+xml
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola Mundo!" />
+
+    <Button
+        android:id="@+id/btnClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Presióname" />
+</LinearLayout>
+
+3. Clase Binding generada
+Android Studio generará automáticamente una clase llamada ActivityMainBinding (nombre del layout convertido a PascalCase + “Binding”).
+
+4. Usar Binding en la Activity
+kotlin
+class MainActivity : AppCompatActivity() {
+
+    // Declaramos la variable binding
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Inflamos el layout usando binding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Accedemos directamente a las vistas
+        binding.txtHello.text = "¡Bienvenido con ViewBinding!"
+        binding.btnClick.setOnClickListener {
+            binding.txtHello.text = "¡Botón presionado!"
+        }
+    }
+}
+📌 Ventajas frente a findViewById
+Más seguro: evita errores de tipo porque las vistas ya están tipadas.
+
+Más limpio: no necesitas escribir findViewById(R.id.xxx).
+
+Automático: genera clases para cada layout.
