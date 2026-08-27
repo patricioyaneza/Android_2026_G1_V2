@@ -1,5 +1,6 @@
 package com.example.proyectodonaciones.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -9,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.proyectodonaciones.R
 import com.example.proyectodonaciones.controller.DonationController
 import com.example.proyectodonaciones.databinding.ActivityMainBinding
+import com.example.proyectodonaciones.model.DonacionModelo
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,6 +50,17 @@ class MainActivity : AppCompatActivity() {
                 binding.txtNuevaDonacion.setText("")
                 binding.txtNuevaDonacion.requestFocus()
             }
+        }
+
+        binding.btnHacerDonacionObject.setOnClickListener {
+            val newDonation = binding.txtNuevaDonacion.text.toString().toIntOrNull()
+            DonacionModelo.saveDonation(newDonation ?: 0)
+            binding.txtTotalDonacion.text = DonacionModelo.totalAmount.toString()
+        }
+
+        binding.btnVerTotal.setOnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
         }
     }
 }
