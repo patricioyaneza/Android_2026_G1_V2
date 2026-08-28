@@ -24,6 +24,6 @@ class MainActivity2 : AppCompatActivity() {
         var txtValor = findViewById<TextView>(R.id.txtValor)
         txtValor.text = DonacionModelo.totalAmount.toString()
 
-        txtValor.text = DonationModel().totalAmount.toString()
+        //txtValor.text = DonationModel().totalAmount.toString()
     }
 }

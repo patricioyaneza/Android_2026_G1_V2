@@ -38,8 +38,6 @@ class MainActivity : AppCompatActivity() {
                 if(controller.save(newDonation))
                 {
                     binding.txtTotalDonacion.text = controller.getTotalAmount().toString()
-                    binding.txtNuevaDonacion.setText("")
-                    binding.txtNuevaDonacion.requestFocus()
                     Toast.makeText(this, "Donación realizada con éxito", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -47,9 +45,10 @@ class MainActivity : AppCompatActivity() {
             {
                 Toast.makeText(this, "Ingrese una donación válida", Toast.LENGTH_SHORT).show()
                 binding.txtNuevaDonacion.setError("Ingrese una donación válida")
-                binding.txtNuevaDonacion.setText("")
-                binding.txtNuevaDonacion.requestFocus()
             }
+
+            binding.txtNuevaDonacion.setText("")
+            binding.txtNuevaDonacion.requestFocus()
         }
 
         binding.btnHacerDonacionObject.setOnClickListener {
