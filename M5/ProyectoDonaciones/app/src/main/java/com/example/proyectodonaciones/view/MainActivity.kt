@@ -61,5 +61,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
+
+        binding.btnEnviarDatoActivity.setOnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
+            // permite enviar un valor a la otra activity, formato (key, value)
+            intent.putExtra("dato", controller.getTotalAmount())
+            startActivity(intent)
+        }
     }
 }
