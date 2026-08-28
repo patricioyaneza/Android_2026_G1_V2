@@ -11,8 +11,8 @@ class DonationController {
     }
 
     // llamo la funcion de model guardar
-    fun saveDonation(amount: String): Boolean {
-        return model.saveDonation(amount.toInt())
+    fun saveDonation(amount: Int): Boolean {
+        return model.saveDonation(amount)
     }
 
     // llamo la funcion de model muestra las  donaciones
