@@ -8,7 +8,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.proyectodonaciones.R
 import com.example.proyectodonaciones.model.DonacionModelo
-import com.example.proyectodonaciones.model.DonationModel
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +20,7 @@ class MainActivity2 : AppCompatActivity() {
             insets
         }
 
-        var txtValor = findViewById<TextView>(R.id.txtValor)
+        var txtValor = findViewById<TextView>(R.id.txtValor2)
         txtValor.text = DonacionModelo.totalAmount.toString()
 
         var txtValorRecibido = findViewById<TextView>(R.id.txtValorRecibido)
