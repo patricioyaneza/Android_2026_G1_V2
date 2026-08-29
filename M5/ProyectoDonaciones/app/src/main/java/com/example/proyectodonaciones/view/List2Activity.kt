@@ -37,6 +37,12 @@ class List2Activity : AppCompatActivity() {
             binding.txtTexto2.setText("")
             binding.txtValor2.setText("")
             binding.txtTexto2.requestFocus()
+
+/*
+Tarea de investigación:  Crear una nueva activity y buscar como
+mostrar una lista con 3 columnas: Nombre | apellido | edad
+ */
+
         }
     }
 }
