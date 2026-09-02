@@ -28,5 +28,9 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, List2Activity::class.java)
             startActivity(intent)
         }
+        binding.btnLista3.setOnClickListener {
+            val intent = Intent(this, List3Activity::class.java)
+            startActivity(intent)
+        }
     }
 }
