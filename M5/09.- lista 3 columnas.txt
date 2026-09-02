@@ -1,0 +1,67 @@
+listView con columnas
+
+1.- crear un layout para definir la estructura:
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nombre" />
+
+        <TextView
+            android:id="@+id/txtApellido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Apellido" />
+
+        <TextView
+            android:id="@+id/txtEdad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edad" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+2.- crear colección con los datos a mostrar
+
+val usuarios = mutableListOf(
+            mapOf("Nombre" to "Juan", "Apellido" to "Díaz", "Edad" to "30"),
+            mapOf("Nombre" to "Ana", "Apellido" to "Aros", "Edad" to "20"),
+            mapOf("Nombre" to "Pedro", "Apellido" to "Adams", "Edad" to "33"),
+            mapOf("Nombre" to "Diego", "Apellido" to "Fuentes", "Edad" to "28"),
+            mapOf("Nombre" to "María", "Apellido" to "Peréz", "Edad" to "45"),
+        )
+
+
+3.- crear adaptador, indicar el layout mencionado al principio y mostrar los datos
+
+        val adapter = SimpleAdapter(
+            this,
+            usuarios,
+            R.layout.item_lista_usuario,
+            arrayOf("Nombre", "Apellido", "Edad"),
+            intArrayOf(R.id.txtNombre, R.id.txtApellido, R.id.txtEdad)
+        )
+        binding.listadoUsuarios.adapter = adapter

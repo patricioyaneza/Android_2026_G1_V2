@@ -1,0 +1,25 @@
+Lista para completar item y subitem de un listview
+
+agregar atributo 
+
+    	private val productos = mutableListOf(mapOf("Producto" to "", "Valor" to ""))
+
+
+Si la info se registrara desde el view
+	val texto = binding.txtTexto2.text.toString().trim().uppercase()
+        val valor = binding.txtValor2.text.toString().trim()
+
+        val producto = mapOf("Producto" to texto, "Valor" to valor)
+        productos.add(producto)
+
+
+3.- crear adapter y cargar datos
+
+            val adapter = SimpleAdapter(
+                this,
+                productos,
+                R.layout.simple_list_item_2,
+                arrayOf("Producto", "Valor"),
+                intArrayOf(R.id.text1, R.id.text2)
+            )
+            binding.listado2.adapter = adapter

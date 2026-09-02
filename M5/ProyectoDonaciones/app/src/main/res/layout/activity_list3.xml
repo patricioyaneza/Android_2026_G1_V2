@@ -6,7 +6,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.List3Activity">
+    <!-- Encabezado interactivo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9B9B9B"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
 
+        <TextView
+            android:id="@+id/headerNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:text="Nombre ↕"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/headerApellido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:text="Apellido ↕"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/headerEdad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:text="Edad ↕"
+            android:textStyle="bold" />
+    </LinearLayout>
     <ListView
         android:id="@+id/listadoUsuarios"
         android:layout_width="0dp"
