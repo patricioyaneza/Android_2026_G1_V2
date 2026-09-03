@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnSolicitar.setOnClickListener{
-
+            //Thread.sleep(10000)
             lifecycleScope.launch {
                 binding.txtMensaje.text = "Solicitud enviada..."
                 delay(10000)
