@@ -1,0 +1,20 @@
+Ejercicio:
+
+Crear un menú con el registro datos y visualización de datos.
+
+
+
+1.- Activity 1 que permita guardar y/o modificar si existen:
+
+Nombre
+Apellido
+Email
+Celular
+Sucursal
+
+Guardar esta información en un Shared Preferences 
+
+
+2.- Activity 2 mostrar datos:
+
+Recuperar los datos almacenados en Shared Preferences y mostrar en la pantalla.
