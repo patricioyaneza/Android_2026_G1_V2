@@ -3,8 +3,8 @@ package com.example.proyectoalmacenamiento.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "usuario")
-data class Usuario (
+@Entity(tableName = "tabla_usuario")
+data class UsuarioModel (
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val nombre: String,
     val apellido: String,

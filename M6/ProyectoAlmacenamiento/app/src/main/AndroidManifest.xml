@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoAlmacenamiento">
         <activity
-            android:name=".MenuActivity"
+            android:name=".GuardarSQLiteActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ProyectoAlmacenamiento"
@@ -32,7 +32,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".GuardarSQLiteActivity"
+            android:name=".MenuActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

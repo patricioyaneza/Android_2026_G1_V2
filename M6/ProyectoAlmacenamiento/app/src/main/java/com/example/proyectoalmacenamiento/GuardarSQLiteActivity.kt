@@ -7,12 +7,16 @@ import com.example.proyectoalmacenamiento.data.AppDatabase
 
 
 import com.example.proyectoalmacenamiento.databinding.ActivityGuardarSqliteBinding
-import com.example.proyectoalmacenamiento.model.Usuario
+import com.example.proyectoalmacenamiento.model.UsuarioModel
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 
 class GuardarSQLiteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGuardarSqliteBinding
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,11 +30,11 @@ class GuardarSQLiteActivity : AppCompatActivity() {
             val celular = binding.txtCelular.text.toString()
             val sucursal = binding.txtSucursal.text.toString()
 
+            val db = AppDatabase.getDatabase(this)
+            val usuarioDAO = db.usuarioDao()
             lifecycleScope.launch {
-                val db = AppDatabase.getDatabase(this@GuardarSQLiteActivity)
-                val usuarioDAO = db.usuarioDao()
 
-                val usuario = Usuario(
+                val usuario = UsuarioModel(
                     nombre = nombre,
                     apellido = apellido,
                     email = email,
@@ -38,14 +42,15 @@ class GuardarSQLiteActivity : AppCompatActivity() {
                     sucursal = sucursal
                 )
                 usuarioDAO.insert(usuario)
+                Toast.makeText(this@GuardarSQLiteActivity, "Usuario guardado exitosamente", Toast.LENGTH_SHORT).show()
+
+                binding.txtNombre.setText("")
+                binding.txtApellido.setText("")
+                binding.txtEmail.setText("")
+                binding.txtCelular.setText("")
+                binding.txtSucursal.setText("")
 
             }
-            Toast.makeText(this, "Usuario guardado correctamente", Toast.LENGTH_SHORT).show()
         }
-
-    }
-
-    fun guardarUsuarios() {
-
     }
 }

@@ -6,8 +6,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.proyectoalmacenamiento.dao.UsuarioDAO
-import com.example.proyectoalmacenamiento.model.Usuario
-@Database(entities = [Usuario::class], version = 1)
+import com.example.proyectoalmacenamiento.model.UsuarioModel
+
+@Database(entities = [UsuarioModel::class], version = 2)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDAO
     companion object{
@@ -19,7 +20,9 @@ abstract class AppDatabase: RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "basededatos"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 instance
             }
