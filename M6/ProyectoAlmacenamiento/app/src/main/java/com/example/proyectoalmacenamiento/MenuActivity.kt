@@ -24,5 +24,10 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, MostrarActivity::class.java)
             startActivity(intent)
         }
+        binding.btnSQLite.setOnClickListener {
+            val intent = Intent(this, GuardarSQLiteActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
