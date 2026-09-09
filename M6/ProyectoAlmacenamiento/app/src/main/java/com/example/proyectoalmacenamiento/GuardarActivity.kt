@@ -24,6 +24,7 @@ class GuardarActivity : AppCompatActivity() {
             val celular = binding.txtCelular.text.toString()
             val sucursal = binding.txtSucursal.text.toString()
 
+            // recuperar los datos almacenados
             val sp = getSharedPreferences("datosusuario", MODE_PRIVATE)
             val editor = sp.edit()
             editor.putString("nombre", nombre).apply()
