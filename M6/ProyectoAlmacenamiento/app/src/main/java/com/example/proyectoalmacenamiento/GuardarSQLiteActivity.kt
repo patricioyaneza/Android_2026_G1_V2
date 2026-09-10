@@ -49,6 +49,17 @@ class GuardarSQLiteActivity : AppCompatActivity() {
                 binding.txtEmail.setText("")
                 binding.txtCelular.setText("")
                 binding.txtSucursal.setText("")
+                binding.txtNombre.requestFocus()
+
+                val usuarios = usuarioDAO.getAll()
+
+                for(usuario in usuarios){
+                    println("Usuario: ${usuario.nombre}")
+                }
+                /*
+                    Ejercicio: En un listView, mostrar nombre, apellido y sucursal de cada usuario.
+                    (1 layout -> linear layout horizontal y 3 textView)
+                 */
 
             }
         }
