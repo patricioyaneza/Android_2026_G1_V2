@@ -1,0 +1,4 @@
+- [x] Add Room dependencies to `gradle/libs.versions.toml`
+- [x] Update `app/build.gradle.kts` to use version catalog versions for Room
+- [x] Sync Gradle project
+- [x] Verify build via `./gradlew :app:kspDebugKotlin`

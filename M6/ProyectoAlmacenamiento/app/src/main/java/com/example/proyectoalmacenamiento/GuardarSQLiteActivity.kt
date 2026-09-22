@@ -1,6 +1,7 @@
 package com.example.proyectoalmacenamiento
 
 import android.os.Bundle
+import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.proyectoalmacenamiento.data.AppDatabase
@@ -61,6 +62,31 @@ class GuardarSQLiteActivity : AppCompatActivity() {
                     (1 layout -> linear layout horizontal y 3 textView)
                  */
 
+            }
+        }
+
+        binding.btnListar.setOnClickListener {
+            val db = AppDatabase.getDatabase(this)
+            val usuarioDAO = db.usuarioDao()
+            lifecycleScope.launch {
+                val usuarios = usuarioDAO.getAll()
+
+                val usuariosMap = usuarios.map { usuario ->
+                    mapOf(
+                        "nombre" to usuario.nombre,
+                        "apellido" to usuario.apellido,
+                        "sucursal" to usuario.sucursal
+                    )
+                }
+
+                val adapter = SimpleAdapter(
+                    this@GuardarSQLiteActivity,
+                    usuariosMap,
+                    R.layout.fila_lista_usuario,
+                    arrayOf("nombre", "apellido", "sucursal"),
+                    intArrayOf(R.id.txtNombreLista, R.id.txtApellidoLista, R.id.txtSucursalLista)
+                )
+                binding.listadoUsuarios.adapter = adapter
             }
         }
     }
