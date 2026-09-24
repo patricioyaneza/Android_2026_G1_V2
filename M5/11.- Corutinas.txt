@@ -1,0 +1,100 @@
+1.- UI
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="109dp"
+        android:background="#2962FF"
+        android:text="Aceptar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMensaje1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="186dp"
+        android:text="Mensaje Hilo Principal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAceptar" />
+
+    <TextView
+        android:id="@+id/txtMensaje2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="186dp"
+        android:text="Mensaje 2do Plano"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMensaje1" />
+
+    <Button
+        android:id="@+id/btnSumar"
+        android:layout_width="197dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="92dp"
+        android:background="@color/teal_700"
+        android:text="Aumentar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMensaje2" />
+
+    <TextView
+        android:id="@+id/txtContador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:text="Contador: 0"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSumar" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="246dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="34dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMensaje2" />
+
+
+2.-  Clases
+
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
+
+
+3.- Codigo
+ binding.btnAceptar.setOnClickListener {
+            binding.txtMensaje1.text = "Mensaje Hilo Principal botón presionado."
+//            Thread.sleep(10000)
+           lifecycleScope.launch{
+                binding.txtMensaje2.text = "Mensaje 2do Plano... Procesando"
+                delay(10000)
+                binding.txtMensaje2.text = "Mensaje 2do Plano... Finalizado"
+            }
+
+            binding.txtMensaje1.text = "Mensaje Hilo Principal ejecución terminada."
+        }
+
+        binding.btnSumar.setOnClickListener {
+            contador++
+            binding.txtContador.text = "Contador: $contador"
+        }
