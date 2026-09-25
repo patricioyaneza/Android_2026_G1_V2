@@ -11,5 +11,7 @@ interface PostApiService {
 
     @GET("posts/{id}")
     suspend fun getPostById(@Path("id") id: Int): Post
+    @GET("users/{userId}/posts")
+    suspend fun getPostsByUserId(@Path("userId") userId: Int): List<Post>
 
 }

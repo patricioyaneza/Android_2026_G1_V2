@@ -37,7 +37,7 @@ class ListadoActivity : AppCompatActivity() {
                         titulosPosts
                     )
                     binding.lvListadoPost.adapter = adapter
-
+                    Toast.makeText(this@ListadoActivity, "Post fueron cargados", Toast.LENGTH_SHORT).show()
 
                 }
                 catch (e: Exception){
@@ -46,5 +46,22 @@ class ListadoActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnVer.setOnClickListener {
+            lifecycleScope.launch {
+                try {
+                    val respuesta = JsonPlaceHolderClient.postApiService.getPostsByUserId(binding.txtIdUsuario.text.toString().toInt())
+                    val adapter = ArrayAdapter(
+                        this@ListadoActivity,
+                        R.layout.simple_list_item_1,
+                        respuesta.map { it.title }
+                    )
+                    binding.lvListadoPost.adapter = adapter
+                    Toast.makeText(this@ListadoActivity, "Post del usiario fueron cargados", Toast.LENGTH_SHORT).show()
+                }
+                catch (e: Exception){
+                    Toast.makeText(this@ListadoActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }
