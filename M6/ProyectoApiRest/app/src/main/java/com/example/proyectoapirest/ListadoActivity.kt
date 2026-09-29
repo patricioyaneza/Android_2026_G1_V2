@@ -29,7 +29,7 @@ class ListadoActivity : AppCompatActivity() {
 //                        println(post.id.toString() + " " + post.title)
 //                    }
 
-                    val titulosPosts = respuesta.map { it.title }.toMutableList()
+                    val titulosPosts = respuesta.map { it.title }
 
                     val adapter = ArrayAdapter(
                         this@ListadoActivity,

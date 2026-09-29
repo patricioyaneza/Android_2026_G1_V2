@@ -23,12 +23,19 @@ class CalculadoraTest {
     @Before
     fun setup() {
         calculadora = Calculadora()
+        println("Configuración de la prueba")
+    }
+    @After
+    fun tearDown() {
+        println("La prueba fue ejecutada con éxito")
     }
 
     // Act + Assert: ejecutar y verificar el resultado
     @Test
     fun sumar_dosNumeros_retornaResultadoCorrecto() {
+        println("Inicio de prueba")
         val resultado = calculadora.sumar(2, 3)
         assertEquals(5, resultado)
+        println("Fin de prueba")
     }
 }
